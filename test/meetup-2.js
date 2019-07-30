@@ -37,7 +37,7 @@ describe("1-noughties-teen-writing.md", () => {
           "HELLO I AM YOU. hello i am you. HELLO I AM YOU. hello i am you."
         )
       ).to.equal(
-        "HeLlo i aM yOu. HeLlo i aM yOu. HeLlo i aM yOu. HeLlo i aM yOu."
+        "HeLlO i aM yOu. HeLlO i aM yOu. HeLlO i aM yOu. HeLlO i aM yOu."
       );
     });
   });
