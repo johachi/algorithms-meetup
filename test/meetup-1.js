@@ -1,7 +1,7 @@
 const { expect } = require("chai");
 const palindromeChecker = require("../meetup-1/1-palindrome");
 
-describe.only("1-palindrome.md", () => {
+describe("1-palindrome.md", () => {
   it("should return true for empty strings", () => {
     expect(palindromeChecker("", "")).to.be.true;
   });
