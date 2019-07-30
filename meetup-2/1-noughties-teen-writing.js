@@ -1,11 +1,21 @@
-function noughties(string) {
-  if (typeof string !== "string") {
-    throw new Error(
-      "ERROR! 1-noughties-teen-writing.js noughties: Input must be of type string"
-    );
+function makeNoughtiesWord(word, shouldBeCapital) {
+  let noughtiesWord = "";
+
+  for (let i = 0; i < word.length; ++i) {
+    const letter = word[i];
+    if (shouldBeCapital) {
+      noughtiesWord += letter.toLocaleUpperCase();
+    } else {
+      noughtiesWord += letter.toLocaleLowerCase();
+    }
+    shouldBeCapital = !shouldBeCapital;
   }
 
-  const words = string.split(" ");
+  return noughtiesWord;
+}
+
+function makeNoughtiesSentence(sentence) {
+  const words = sentence.split(" ");
 
   const noughtiesWords = words.map((word, index) => {
     let noughtiesWord = "";
@@ -14,16 +24,7 @@ function noughties(string) {
       noughtiesWord = "i";
     } else {
       let shouldBeCapital = index !== 0 ? false : true; // First word should have first letter capitalized;
-
-      for (let i = 0; i < word.length; ++i) {
-        const letter = word[i];
-        if (shouldBeCapital) {
-          noughtiesWord += letter.toLocaleUpperCase();
-        } else {
-          noughtiesWord += letter.toLocaleLowerCase();
-        }
-        shouldBeCapital = !shouldBeCapital;
-      }
+      noughtiesWord = makeNoughtiesWord(word, shouldBeCapital);
     }
 
     return noughtiesWord;
@@ -32,4 +33,20 @@ function noughties(string) {
   return noughtiesWords.join(" ");
 }
 
-module.exports = noughties
+function noughties(string) {
+  if (typeof string !== "string") {
+    throw new Error(
+      "ERROR! 1-noughties-teen-writing.js noughties: Input must be of type string"
+    );
+  }
+
+  const sentences = string.split(". ");
+
+  const noughitesSentences = sentences.map(sentence => {
+    return makeNoughtiesSentence(sentence);
+  });
+
+  return noughitesSentences.join(". ");
+}
+
+module.exports = noughties;
