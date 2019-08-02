@@ -63,10 +63,10 @@ describe("4-islands.md", () => {
       [1, 1, 1, 1, 1]
     ];
 
-    expect(countIslands(map1)).to.equal(1);
-    expect(countIslands(map2)).to.equal(1);
-    expect(countIslands(map3)).to.equal(1);
-    expect(countIslands(map4)).to.equal(1);
+    expect(countIslands(map1)).to.equal(2);
+    expect(countIslands(map2)).to.equal(2);
+    expect(countIslands(map3)).to.equal(2);
+    expect(countIslands(map4)).to.equal(2);
   });
 
   it("should work for full maps", () => {
