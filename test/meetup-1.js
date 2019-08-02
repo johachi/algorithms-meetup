@@ -31,8 +31,8 @@ describe("3-possible-max.md", () => {
 
 describe("4-islands.md", () => {
   it("should work for 1x1 maps", () => {
-    expect(countIslands([0])).to.equal(0);
-    expect(countIslands([1])).to.equal(1);
+    expect(countIslands([[0]])).to.equal(0);
+    expect(countIslands([[1]])).to.equal(1);
   });
 
   it("it should work for bigger maps", () => {
@@ -84,6 +84,6 @@ describe("4-islands.md", () => {
     expect(countIslands(map1)).to.equal(2);
 
     const map2 = [[1, 0], [0, 1], [0, 1]];
-    expect(countIslands(map1)).to.equal(2);
+    expect(countIslands(map2)).to.equal(2);
   });
 });

@@ -31,7 +31,7 @@ describe("1-noughties-teen-writing.md", () => {
   });
 
   describe("should return correct noughiet sentences", () => {
-    it("should turn 'HELLO I AM YOU' to 'HeLlO i aM yOu. HELLO I AM YOU' to 'HeLlO i aM yOu.", () => {
+    it("should work with 3 sentences", () => {
       expect(
         convertToNoughties(
           "HELLO I AM YOU. hello i am you. HELLO I AM YOU. hello i am you."
