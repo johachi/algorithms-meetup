@@ -12,8 +12,6 @@ function countIslands(map) {
   }
 
   const visitTile = (row, col) => {
-    if (visitedTiles[row][col]) return;
-
     const visitNeighbours = (row, col) => {
       if (row < 0 || col < 0) return;
       if (row >= map.length || col >= map[row].length) return;
@@ -41,7 +39,7 @@ function countIslands(map) {
   for (let row = 0; row < map.length; ++row) {
     const currentRow = map[row];
     for (let col = 0; col < currentRow.length; ++col) {
-      visitTile(row, col);
+      visitedTiles[row][col] || visitTile(row, col);
     }
   }
 
