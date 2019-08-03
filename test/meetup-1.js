@@ -2,6 +2,7 @@ const { expect } = require("chai");
 const palindromeChecker = require("./../meetup-1/1-palindrome");
 const findAAndB = require("./../meetup-1/3-possible-max");
 const countIslands = require("./../meetup-1/4-islands");
+const nQueens = require("./../meetup-1/5-nqueens");
 
 describe("1-palindrome.md", () => {
   it("should return true for empty strings", () => {
@@ -85,5 +86,31 @@ describe("4-islands.md", () => {
 
     const map2 = [[1, 0], [0, 1], [0, 1]];
     expect(countIslands(map2)).to.equal(2);
+  });
+});
+
+describe("5-nqueens", () => {
+  it("correct answer for n = 3", () => {
+    expect(nQueens(3)).to.be(2);
+  });
+
+  it("correct answer for n = 4", () => {
+    expect(nQueens(4)).to.be(3);
+  });
+
+  it("correct answer for n = 10", () => {
+    expect(nQueens(10)).to.be(10);
+  });
+
+  it("correct answer for n = 23", () => {
+    expect(nQueens(100)).to.be(23);
+  });
+
+  it("correct answer for n = 24", () => {
+    expect(nQueens(100)).to.be(24);
+  });
+
+  it("correct answer for n = 100", () => {
+    expect(nQueens(100)).to.be(100);
   });
 });
