@@ -1,5 +1,6 @@
 const { expect } = require("chai");
 const convertToNoughties = require("../meetup-2/1-noughties-teen-writing");
+const balancedParentheses = require("./../meetup-2/2-balanced-parentheses");
 
 describe("1-noughties-teen-writing.md", () => {
   describe("should return correct noughiet word", () => {
@@ -39,6 +40,34 @@ describe("1-noughties-teen-writing.md", () => {
       ).to.equal(
         "HeLlO i aM yOu. HeLlO i aM yOu. HeLlO i aM yOu. HeLlO i aM yOu."
       );
+    });
+  });
+});
+
+describe("2-balanced-parentheses.md", () => {
+  describe("Balanced strings", () => {
+    it("should return true for balanced strings, only parentheses", () => {
+      expect("()").to.be.true;
+      expect("(())").to.be.true;
+      expect("[[]]").to.be.true;
+      expect("{{{}}}").to.be.true;
+      expect("([{()}])").to.be.true;
+    });
+
+    it("should return true for balanced strings", () => {
+      expect("bar = { code: chrysalis() }").to.be.true;
+    });
+  });
+
+  describe("should return true for balanced strings, only parentheses", () => {
+    it("should turn 'HELLO' to 'HeLlO", () => {
+      expect("{").to.be.false;
+      expect("({[]").to.be.false;
+      expect("({[}])").to.be.false;
+    });
+
+    it("should return false for unbalanced strings", () => {
+      expect("var foo = function() { boo();").to.be.false;
     });
   });
 });
