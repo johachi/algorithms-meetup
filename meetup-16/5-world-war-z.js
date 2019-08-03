@@ -1,3 +1,6 @@
+// This is an O(n^2) solution, where n = total number of tiles. 
+// Todo: Add  O(n) solution.
+
 function zombie(map) {
   function validTile(x, y) {
     validX = x >= 0 && x < map.length;

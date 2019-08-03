@@ -1,7 +1,7 @@
 const { expect } = require("chai");
 const { zombie } = require("./5-world-war-z");
 
-describe("String Adder", () => {
+describe("5-world-war-z", () => {
   it("Test 1", () => {
     const map = [
       [0, 0, 0, 0, 0, 0],
