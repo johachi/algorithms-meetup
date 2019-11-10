@@ -2,7 +2,7 @@
 
 ## Summary
 
-Write a function that rotates a NxN matrix 90 degrees clockwise.
+Write a function that rotates a NxM matrix 90 degrees clockwise.
 
 matrix - an array of arrays of values.
 
