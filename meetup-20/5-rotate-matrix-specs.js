@@ -1,7 +1,7 @@
 const { expect } = require("chai");
 const matrixRotater = require("./5-rotate-matrix");
 
-describe.only("5-rotate-matrix.md", () => {
+describe("5-rotate-matrix.md", () => {
   describe("should rotate NxN matrixes clock-wise", () => {
     it("1x1 matrix", () => {
       const toRotate = [[1]];
