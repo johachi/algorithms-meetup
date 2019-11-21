@@ -1,7 +1,7 @@
 const { expect } = require("chai");
-const balancedParentheses = require("./../meetup-2/2-balanced-parentheses");
+const balancedParentheses = require("./2-balanced-parentheses");
 
-describe("2-balanced-parentheses.md", () => {
+describe("Meetup 2: 2-balanced-parentheses.md", () => {
   describe("Only parentheses", () => {
     it("should return true for balanced strings", () => {
       expect(balancedParentheses("()")).to.be.true;
