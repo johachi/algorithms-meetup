@@ -1,28 +1,37 @@
-const openingBrackets = {
-  "{": "}",
-  "[": "]",
-  "(": ")"
-};
-
-const closingBrackets = {
-  "}": "{",
+const opposite = {
+  ")": "(",
   "]": "[",
-  ")": "("
+  "}": "{",
 };
 
 function balansedParentheses(str) {
   const seenBrackets = [];
+
+  const openingBracketsAction = bracket => {
+    return seenBrackets.push(bracket);
+  };
+
+  const closingBracketsAction = bracket => {
+    return seenBrackets.pop() === opposite[bracket];
+  };
+
+  const parensAction = {
+    "(": openingBracketsAction,
+    "[": openingBracketsAction,
+    "{": openingBracketsAction,
+    ")": closingBracketsAction,
+    "]": closingBracketsAction,
+    "}": closingBracketsAction
+  };
+
   for (let i = 0; i < str.length; ++i) {
     const currentBracket = str[i];
 
-    if (openingBrackets.hasOwnProperty(currentBracket)) {
-      seenBrackets.push(currentBracket);
-    } else if (closingBrackets.hasOwnProperty(currentBracket)) {
-      if(closingBrackets[currentBracket] === seenBrackets[seenBrackets.length - 1]) {
-        seenBrackets.pop();
-      } else {
-        return false;
-      }
+    if (
+      parensAction.hasOwnProperty(currentBracket) &&
+      !parensAction[currentBracket](currentBracket)
+    ) {
+      return false;
     }
   }
   return seenBrackets.length === 0;
